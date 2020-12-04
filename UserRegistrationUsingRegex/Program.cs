@@ -11,13 +11,17 @@ namespace UserRegistrationUsingRegex
             string firstName = Console.ReadLine();
             Console.WriteLine("Enter the last name = ");
             string lastName = Console.ReadLine();
-            Console.WriteLine("Enter the valid email = ");
+            Console.WriteLine("Enter the email = ");
             string email = Console.ReadLine();
+            Console.WriteLine("Enter the mobile pattern = ");
+            string mobilePattern = Console.ReadLine();
 
             UserRegistrationRegex userRegistrationRegex = new UserRegistrationRegex();
             Console.WriteLine(userRegistrationRegex.validateFirstName(firstName));
             Console.WriteLine(userRegistrationRegex.validateLastName(lastName));
-            Console.WriteLine(userRegistrationRegex.validatEmail(email));
+            Console.WriteLine(userRegistrationRegex.validateEmail(email));
+            Console.WriteLine(userRegistrationRegex.validateMobileFormat(mobilePattern));
+
         }
     }
 }

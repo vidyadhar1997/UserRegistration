@@ -9,6 +9,7 @@ namespace UserRegistrationUsingRegex
     {
         public static string VALIDNAMEPATTERN = "^[A-Z]{1}[a-z]{2,}$";
         public static string EMAILPATTERN = "^[0-9a-zA-z]+([._+-][0-9a-zA-z]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2})$";
+        public static string MOBILEPATTERN = "^[0-9]{2}[ ][0-9]{10}$";
         public bool validateFirstName(String firstName)
         {
             return Regex.IsMatch(firstName, VALIDNAMEPATTERN);
@@ -17,9 +18,13 @@ namespace UserRegistrationUsingRegex
         {
             return Regex.IsMatch(lastName, VALIDNAMEPATTERN);
         }
-        public bool validatEmail(String email)
+        public bool validateEmail(String email)
         {
             return Regex.IsMatch(email, EMAILPATTERN);
+        }
+        public bool validateMobileFormat(String mobileFormat)
+        {
+            return Regex.IsMatch(mobileFormat, MOBILEPATTERN);
         }
     }
 }
