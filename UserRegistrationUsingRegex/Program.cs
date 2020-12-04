@@ -24,7 +24,6 @@ namespace UserRegistrationUsingRegex
             Console.WriteLine(userRegistrationRegex.validateEmail(email));
             Console.WriteLine(userRegistrationRegex.validateMobileFormat(mobilePattern));
             Console.WriteLine(userRegistrationRegex.validatePreDefinedPassword(preDefinedPassword));
-
         }
     }
 }
