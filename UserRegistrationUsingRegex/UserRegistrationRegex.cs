@@ -8,13 +8,18 @@ namespace UserRegistrationUsingRegex
     class UserRegistrationRegex
     {
         public static string VALIDNAMEPATTERN = "^[A-Z]{1}[a-z]{2,}$";
+        public static string EMAILPATTERN = "^[0-9a-zA-z]+([._+-][0-9a-zA-z]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2})$";
         public bool validateFirstName(String firstName)
         {
             return Regex.IsMatch(firstName, VALIDNAMEPATTERN);
         }
-        public bool validatelastName(String firstName)
+        public bool validateLastName(String lastName)
         {
-            return Regex.IsMatch(firstName, VALIDNAMEPATTERN);
+            return Regex.IsMatch(lastName, VALIDNAMEPATTERN);
+        }
+        public bool validatEmail(String email)
+        {
+            return Regex.IsMatch(email, EMAILPATTERN);
         }
     }
 }
