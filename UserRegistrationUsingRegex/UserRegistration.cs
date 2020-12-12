@@ -83,5 +83,16 @@ namespace UserRegistrationUsingRegex
                 throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_LASTNAME, "Invalid Last Name Format");
             }
         }
+        public void checkEmail(string email)
+        {
+            if (userRegistrationRegex.validateEmail(email))
+            {
+                Console.WriteLine("email is valid");
+            }
+            else
+            {
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_EMAIL, "Invalid Email Format");
+            }
+        }
     }
 }

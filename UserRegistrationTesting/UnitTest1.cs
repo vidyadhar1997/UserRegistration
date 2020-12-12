@@ -121,5 +121,19 @@ namespace UserRegistrationTesting
                 Assert.AreEqual("Invalid Last Name Format", exception.Message);
             }
         }
+        [TestMethod]
+        [DataRow("abc@.com.my")]
+        public void GivenEmail_WhenInvalid_ThenShouldThrowInvalidEmailException(string email)
+        {
+            try
+            {
+                UserRegistration userRegistration = new UserRegistration();
+                userRegistration.checkEmail(email);
+            }
+            catch (UserRegistrationException exception)
+            {
+                Assert.AreEqual("Invalid Email Format", exception.Message);
+            }
+        }
     }
 }
