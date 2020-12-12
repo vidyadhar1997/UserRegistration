@@ -25,5 +25,12 @@ namespace UserRegistrationUsingRegex
             else
                 return "Entry is not successful";
         }
+        public string checkForEmail()
+        {
+            if (message.Contains("Happy"))
+                return "Entry is successful";
+            else
+                return "Entry is not successful";
+        }
     }
 }
