@@ -9,7 +9,7 @@ namespace UserRegistrationUsingRegex
 {
     class EmailSamples
     {
-        public void validateEmail()
+        public void validateEmails()
         {
             //valid emails
             var emails = new ArrayList();

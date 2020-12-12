@@ -25,7 +25,7 @@ namespace UserRegistrationUsingRegex
             Console.WriteLine(userRegistrationRegex.validatePreDefinedPassword(preDefinedPassword));
             Console.WriteLine("Email sample validator");
             EmailSamples emailSamples = new EmailSamples();
-            emailSamples.validateEmail();
+            emailSamples.validateEmails();
         }
     }
 }
