@@ -78,5 +78,13 @@ namespace UserRegistrationTesting
             string expected = userRegistration.checkForPassword();
             Assert.AreEqual(expected, "Entry is successful");
         }
+        [TestMethod]
+        [DataRow("Sad")]
+        public void GivenMessage_WhenSad_ReturnEntryUnSucessfulForPassword(string message)
+        {
+            UserRegistration userRegistration = new UserRegistration(message);
+            string expected = userRegistration.checkForPassword();
+            Assert.AreEqual(expected, "Entry is not successful");
+        }
     }
 }
