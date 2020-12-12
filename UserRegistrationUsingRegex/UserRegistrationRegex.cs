@@ -11,9 +11,9 @@ namespace UserRegistrationUsingRegex
         public static string EMAILPATTERN = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z0-9]{2,6}$";
         public static string MOBILEPATTERN = "^[0-9]{2}[ ][0-9]{10}$";
         public static string PASSWORDRULE = "^(?=.*[A-Z])(?=.*[@#$%&*!_.-=])(?=.*[0-9])[a-zA-Z0-9].{8,}$";
-        public bool validateFirstName(String firstName)
+        public bool validateFirstName(string firstName)
         {
-            return Regex.IsMatch(firstName, VALIDNAMEPATTERN);
+            return Regex.IsMatch(firstName, VALIDNAMEPATTERN); 
         }
         public bool validateLastName(String lastName)
         {

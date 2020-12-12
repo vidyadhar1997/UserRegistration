@@ -7,6 +7,7 @@ namespace UserRegistrationUsingRegex
     public class UserRegistration
     {
         private string message;
+        UserRegistrationRegex userRegistrationRegex = new UserRegistrationRegex();
         public UserRegistration()
         {
         }
@@ -51,7 +52,6 @@ namespace UserRegistrationUsingRegex
         }
         public string checkMultipleEntriesOfEmail(string email1,string email2,string email3,string email4)
         {
-            UserRegistrationRegex userRegistrationRegex = new UserRegistrationRegex();
             bool emailForEntry1 = userRegistrationRegex.validateEmail(email1);
             bool emailForEntry2 = userRegistrationRegex.validateEmail(email2);
             bool emailForEntry3 = userRegistrationRegex.validateEmail(email3);
@@ -60,6 +60,17 @@ namespace UserRegistrationUsingRegex
                 return "Entry is successful";
             else
                 return "Entry is not successful";
+        }
+        public void checkFirstName(string firstName)
+        {
+            if (userRegistrationRegex.validateFirstName(firstName))
+            {
+                Console.WriteLine("First Name is valid");
+            }
+            else
+            {
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_FIRSTNAME, "Invalid Name Format");
+            }
         }
     }
 }

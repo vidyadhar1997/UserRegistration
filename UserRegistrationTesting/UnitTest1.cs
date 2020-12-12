@@ -11,7 +11,7 @@ namespace UserRegistrationTesting
         public void GivenMessage_WhenHappy_ReturnEntrySucessfulForFirstName(string message)
         {
             UserRegistration userRegistration = new UserRegistration(message);
-            string expected=userRegistration.checkForFirstName();
+            string expected = userRegistration.checkForFirstName();
             Assert.AreEqual(expected, "Entry is successful");
         }
         [TestMethod]
@@ -87,11 +87,25 @@ namespace UserRegistrationTesting
             Assert.AreEqual(expected, "Entry is not successful");
         }
         [TestMethod]
-        public void GivenParameterizedTest_ToValidateMultipleEntries_ReturnEntryIsSucessful()
+        public void GivenParameterizedTest_WhenValidateMultipleEntries_ReturnEntryIsSucessful()
         {
             UserRegistration userRegistration = new UserRegistration();
-            var result=userRegistration.checkMultipleEntriesOfEmail("abc@yahoo.com", "abc-100@yahoo.com", "abc@gmail.com.com", "abc+100@gmail.com");
+            var result = userRegistration.checkMultipleEntriesOfEmail("abc@yahoo.com", "abc-100@yahoo.com", "abc@gmail.com.com", "abc+100@gmail.com");
             Assert.AreEqual(result, "Entry is successful");
+        }
+        [TestMethod]
+        [DataRow("dhiraj")]
+        public void GivenFirstName_WhenInvalid_ThenShouldThrowInvalidFirstNameException(string firstName)
+        {
+            try
+            {
+                UserRegistration userRegistration = new UserRegistration();
+                userRegistration.checkFirstName(firstName);
+            }
+            catch (UserRegistrationException exception)
+            {
+                Assert.AreEqual("Invalid Name Format", exception.Message);
+            }
         }
     }
 }
