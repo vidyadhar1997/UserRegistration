@@ -9,6 +9,9 @@ namespace UserRegistrationUsingRegex
 {
     class EmailSamples
     {
+        /// <summary>
+        /// Validates the emails.
+        /// </summary>
         public void validateEmails()
         {
             //valid emails

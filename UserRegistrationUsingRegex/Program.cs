@@ -4,6 +4,10 @@ namespace UserRegistrationUsingRegex
 {
     class Program
     {
+        /// <summary>
+        /// Main Methode For User Input
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             Console.WriteLine("welcome to the user registration problem");
