@@ -15,7 +15,7 @@ namespace UserRegistrationUsingRegex
             string email = Console.ReadLine();
             Console.WriteLine("Enter the mobile pattern = ");
             string mobilePattern = Console.ReadLine();
-            Console.WriteLine("Enter the password = \n");
+            Console.WriteLine("Enter the password = ");
             string preDefinedPassword = Console.ReadLine();
             UserRegistrationRegex userRegistrationRegex = new UserRegistrationRegex();
             Console.WriteLine(userRegistrationRegex.validateFirstName(firstName));
