@@ -15,19 +15,19 @@ namespace UserRegistrationUsingRegex
         {
             return Regex.IsMatch(firstName, VALIDNAMEPATTERN); 
         }
-        public bool validateLastName(String lastName)
+        public bool validateLastName(string lastName)
         {
             return Regex.IsMatch(lastName, VALIDNAMEPATTERN);
         }
-        public bool validateEmail(String email)
+        public bool validateEmail(string email)
         {
             return Regex.IsMatch(email, EMAILPATTERN);
         }
-        public bool validateMobileFormat(String mobileFormat)
+        public bool validateMobileFormat(string mobileFormat)
         {
             return Regex.IsMatch(mobileFormat, MOBILEPATTERN);
         }
-        public bool validatePreDefinedPassword(String preDefinedPassword)
+        public bool validatePreDefinedPassword(string preDefinedPassword)
         {
             return Regex.IsMatch(preDefinedPassword, PASSWORDRULE);
         }

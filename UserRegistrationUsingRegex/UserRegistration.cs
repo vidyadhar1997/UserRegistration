@@ -94,5 +94,16 @@ namespace UserRegistrationUsingRegex
                 throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_EMAIL, "Invalid Email Format");
             }
         }
+        public void checkMobile(string mobileFormat)
+        {
+            if (userRegistrationRegex.validateMobileFormat(mobileFormat))
+            {
+                Console.WriteLine("mobile format is valid");
+            }
+            else
+            {
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_MOBILE_NUMBER, "Invalid Mobile Number Format");
+            }
+        }
     }
 }

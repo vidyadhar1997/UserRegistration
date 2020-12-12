@@ -135,5 +135,19 @@ namespace UserRegistrationTesting
                 Assert.AreEqual("Invalid Email Format", exception.Message);
             }
         }
+        [TestMethod]
+        [DataRow("911 8149713160")]
+        public void GivenMobileFormat_WhenInvalid_ThenShouldThrowInvalidMobileFormatException(string mobileFormat)
+        {
+            try
+            {
+                UserRegistration userRegistration = new UserRegistration();
+                userRegistration.checkMobile(mobileFormat);
+            }
+            catch (UserRegistrationException exception)
+            {
+                Assert.AreEqual("Invalid Mobile Number Format", exception.Message);
+            }
+        }
     }
 }
