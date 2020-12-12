@@ -32,5 +32,12 @@ namespace UserRegistrationUsingRegex
             else
                 return "Entry is not successful";
         }
+        public string checkForMobile()
+        {
+            if (message.Contains("Happy"))
+                return "Entry is successful";
+            else
+                return "Entry is not successful";
+        }
     }
 }
