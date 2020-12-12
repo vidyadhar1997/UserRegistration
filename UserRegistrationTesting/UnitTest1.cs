@@ -104,7 +104,21 @@ namespace UserRegistrationTesting
             }
             catch (UserRegistrationException exception)
             {
-                Assert.AreEqual("Invalid Name Format", exception.Message);
+                Assert.AreEqual("Invalid First Name Format", exception.Message);
+            }
+        }
+        [TestMethod]
+        [DataRow("hudge")]
+        public void GivenLastName_WhenInvalid_ThenShouldThrowInvalidLastNameException(string lastName)
+        {
+            try
+            {
+                UserRegistration userRegistration = new UserRegistration();
+                userRegistration.checkLastName(lastName);
+            }
+            catch (UserRegistrationException exception)
+            {
+                Assert.AreEqual("Invalid Last Name Format", exception.Message);
             }
         }
     }

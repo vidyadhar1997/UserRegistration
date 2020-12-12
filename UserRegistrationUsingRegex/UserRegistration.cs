@@ -69,7 +69,18 @@ namespace UserRegistrationUsingRegex
             }
             else
             {
-                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_FIRSTNAME, "Invalid Name Format");
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_FIRSTNAME, "Invalid First Name Format");
+            }
+        }
+        public void checkLastName(string lastName)
+        {
+            if (userRegistrationRegex.validateLastName(lastName))
+            {
+                Console.WriteLine("Last Name is valid");
+            }
+            else
+            {
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_LASTNAME, "Invalid Last Name Format");
             }
         }
     }
