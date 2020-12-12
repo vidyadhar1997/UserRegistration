@@ -46,5 +46,13 @@ namespace UserRegistrationTesting
             string expected = userRegistration.checkForEmail();
             Assert.AreEqual(expected, "Entry is successful");
         }
+        [TestMethod]
+        [DataRow("Sad")]
+        public void GivenMessage_WhenSad_ReturnEntryUnSucessfulForEmail(string message)
+        {
+            UserRegistration userRegistration = new UserRegistration(message);
+            string expected = userRegistration.checkForEmail();
+            Assert.AreEqual(expected, "Entry is not successful");
+        }
     }
 }
