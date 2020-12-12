@@ -30,5 +30,13 @@ namespace UserRegistrationTesting
             string expected = userRegistration.checkForFirstName();
             Assert.AreEqual(expected, "Entry is successful");
         }
+        [TestMethod]
+        [DataRow("Sad")]
+        public void GivenMessage_WhenSad_ReturnEntryUnSucessfulForLastName(string message)
+        {
+            UserRegistration userRegistration = new UserRegistration(message);
+            string expected = userRegistration.checkForFirstName();
+            Assert.AreEqual(expected, "Entry is not successful");
+        }
     }
 }
