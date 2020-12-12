@@ -149,5 +149,19 @@ namespace UserRegistrationTesting
                 Assert.AreEqual("Invalid Mobile Number Format", exception.Message);
             }
         }
+        [TestMethod]
+        [DataRow("dhiraj@123")]
+        public void GivenPasswordFormat_WhenInvalid_ThenShouldThrowInvalidPasswordFormatException(string preDefinedPassword)
+        {
+            try
+            {
+                UserRegistration userRegistration = new UserRegistration();
+                userRegistration.checkPassword(preDefinedPassword);
+            }
+            catch (UserRegistrationException exception)
+            {
+                Assert.AreEqual("Invalid Password Format", exception.Message);
+            }
+        }
     }
 }

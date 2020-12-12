@@ -105,5 +105,16 @@ namespace UserRegistrationUsingRegex
                 throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_MOBILE_NUMBER, "Invalid Mobile Number Format");
             }
         }
+        public void checkPassword(string preDefinedPassword)
+        {
+            if (userRegistrationRegex.validatePreDefinedPassword(preDefinedPassword))
+            {
+                Console.WriteLine("password format is valid");
+            }
+            else
+            {
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_PASSWORD, "Invalid Password Format");
+            }
+        }
     }
 }
