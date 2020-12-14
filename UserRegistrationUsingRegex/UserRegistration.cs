@@ -85,13 +85,10 @@ namespace UserRegistrationUsingRegex
         /// <param name="email3">The email3.</param>
         /// <param name="email4">The email4.</param>
         /// <returns></returns>
-        public string checkMultipleEntriesOfEmail(string email1,string email2,string email3,string email4)
+        public string checkMultipleEntriesOfEmail(string emails)
         {
-            bool emailForEntry1 = userRegistrationRegex.validateEmail(email1);
-            bool emailForEntry2 = userRegistrationRegex.validateEmail(email2);
-            bool emailForEntry3 = userRegistrationRegex.validateEmail(email3);
-            bool emailForEntry4 = userRegistrationRegex.validateEmail(email4);
-            if (emailForEntry1 && emailForEntry2 && emailForEntry3 && emailForEntry4)
+            bool emailForEntry1 = userRegistrationRegex.validateEmail(emails);
+            if (emailForEntry1 == true)
                 return "Entry is successful";
             else
                 return "Entry is not successful";

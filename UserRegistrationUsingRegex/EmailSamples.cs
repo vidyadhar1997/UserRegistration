@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace UserRegistrationUsingRegex
 {
-    class EmailSamples
+    public class EmailSamples
     {
         /// <summary>
         /// Validates the emails.

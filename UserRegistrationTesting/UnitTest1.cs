@@ -130,11 +130,41 @@ namespace UserRegistrationTesting
         /// Givens the parameterized test when validate multiple entries return entry is sucessful.
         /// </summary>
         [TestMethod]
-        public void GivenParameterizedTest_WhenValidateMultipleEntries_ReturnEntryIsSucessful()
+        [DataRow("abc@yahoo.com")]
+        [DataRow("abc-100@yahoo.com")]
+        [DataRow("abc.100@yahoo.com")]
+        [DataRow("abc111@abc.com")]
+        [DataRow("abc-100@abc.net")]
+        [DataRow("abc.100@abc.com.au")]
+        [DataRow("abc@1.com")]
+        [DataRow("abc@gmail.com.com")]
+        [DataRow("abc+100@gmail.com")]
+        public void GivenParameterizedTest_WhenValidateMultipleEntries_ReturnEntryIsSucessful(string emails)
         {
             UserRegistration userRegistration = new UserRegistration();
-            var result = userRegistration.checkMultipleEntriesOfEmail("abc@yahoo.com", "abc-100@yahoo.com", "abc@gmail.com.com", "abc+100@gmail.com");
+            var result = userRegistration.checkMultipleEntriesOfEmail(emails);
             Assert.AreEqual(result, "Entry is successful");
+        }
+        /// <summary>
+        /// Givens the parameterized test when validate multiple entries return entry is Unsuccessful.
+        /// </summary>
+        [TestMethod]
+        [DataRow("abc")]
+        [DataRow("abc@.com.my")]
+        [DataRow("abc123@gmail.a")]
+        [DataRow("abc123@.com")]
+        [DataRow("abc123@.com.com")]
+        [DataRow(".abc@abc.com")]
+        [DataRow("abc()*@gmail.com")]
+        [DataRow("abc@%*.com")]
+        [DataRow("abc..2002@gmail.com")]
+        [DataRow("abc.@gmail.com")]
+        [DataRow("abc@abc@gmail.com")]
+        public void GivenParameterizedTest_WhenInvalidValidateMultipleEntries_ReturnEntryIsUnSucessful(string emails)
+        {
+            UserRegistration userRegistration = new UserRegistration();
+            var result = userRegistration.checkMultipleEntriesOfEmail(emails);
+            Assert.AreEqual(result, "Entry is not successful");
         }
         /// <summary>
         /// Givens the first name when invalid then should throw invalid first name exception.
